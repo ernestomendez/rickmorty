@@ -1,0 +1,10 @@
+<div *ngIf="loading">Cargando personajes...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<div *ngIf="!loading && !error" class="character-grid">
+  <div *ngFor="let character of characters" class="card">
+    <img [src]="character.image" [alt]="character.name" />
+    <h3>{{ character.name }}</h3>
+    <p>Género: {{ character.gender }}</p>
+  </div>
+</div>
